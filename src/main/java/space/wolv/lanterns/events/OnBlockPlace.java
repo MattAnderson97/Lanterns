@@ -27,6 +27,7 @@ public class OnBlockPlace implements Listener
                     if (Hash.hasLocations(playerUUID))
                     {
                         Hash.addLocation(playerUUID, placedBlock.getLocation());
+                        player.sendMessage("Lantern placed");
                     }
                 }
             }

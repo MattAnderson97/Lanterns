@@ -62,7 +62,16 @@ public class Hash
         {
             ArrayList<Location> locations = lanternLocations.get(playerUUID);
             locations.remove(location);
-            lanternLocations.put(playerUUID, locations);
+
+            if (locations.isEmpty())
+            {
+                lanternLocations.remove(playerUUID);
+            }
+            else
+            {
+                lanternLocations.put(playerUUID, locations);
+            }
+
             return true;
         }
         else
